@@ -1,0 +1,5 @@
+attacker_type,attacker_label,source,seed_count,policy_variant_set,target_count,planner_mode,planner_status,provider,model,network_call_attempted,attack_run_count,attack_enabling_run_count,ledger_blocked_run_count,attack_pair_count,attack_enabling_pair_count,ledger_blocked_pair_count,attack_guess_count,attack_correct_guess_count,attack_guess_success_rate
+non_adaptive,A0 non-adaptive,pilot_matrix,3,core,1,deterministic,completed,n/a,n/a,n/a,3,3,0,3,3,0,3,3,1.0
+scripted_adaptive,A1 scripted adaptive,pilot_matrix,3,core,1,deterministic,completed,n/a,n/a,n/a,12,6,6,6,3,3,3,3,1.0
+llm_adaptive,A2 fake/local LLM adaptive,a2_fake_llm_matrix,3,core,1,fake,completed,fake,fake-json-model,false,6,3,3,6,3,3,3,3,1.0
+llm_adaptive_real_status,A2 guarded OpenAI-compatible,a2_real_llm_blocked,0,unknown,0,openai-compatible,network_not_allowed,local,local-json-model,false,0,0,0,0,0,0,0,0,0.0
