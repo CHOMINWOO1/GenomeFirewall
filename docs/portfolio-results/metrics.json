@@ -1,0 +1,93 @@
+{
+  "subtitle": "Historical synthetic pilot with three seeds; attacker budgets and run counts differ.",
+  "panels": [
+    {
+      "title": "Pilot attack runs",
+      "kind": "stacked",
+      "labels": [
+        "A0 non-adaptive",
+        "A1 scripted adaptive",
+        "A2 fake/local"
+      ],
+      "series": [
+        {
+          "name": "Ledger blocked",
+          "values": [
+            0,
+            6,
+            3
+          ]
+        },
+        {
+          "name": "Other runs",
+          "values": [
+            3,
+            6,
+            3
+          ]
+        }
+      ],
+      "xlabel": "Runs",
+      "xlim": [
+        0,
+        15
+      ]
+    },
+    {
+      "title": "Correct guesses in reported outputs",
+      "labels": [
+        "A0",
+        "A1",
+        "A2 fake/local"
+      ],
+      "values": [
+        3,
+        3,
+        3
+      ],
+      "value_labels": [
+        "3 / 3",
+        "3 / 3",
+        "3 / 3"
+      ],
+      "xlabel": "Correct guesses",
+      "xlim": [
+        0,
+        4.3
+      ]
+    }
+  ],
+  "boundary": "Blocking some queries did not eliminate correct inference in this pilot. This is not a defense ranking.\nThe real-provider A2 path was not executed (network_not_allowed).",
+  "sources": [
+    "docs/experiments/a0_a1_a2_comparison_report.md",
+    "VALIDATION.md"
+  ],
+  "interpretation": "A1과 A2에서 일부 실행이 차단됐지만 보고된 올바른 추론 수는 각각 3/3이었다. 차단 횟수를 개인정보 보호 성공률로 바꾸어 해석하면 안 된다. 실제 외부 LLM 경로는 실행되지 않았다.",
+  "progress": [
+    [
+      "질의·공격·ledger 정책",
+      "구현 및 합성 pilot 실행"
+    ],
+    [
+      "공개본 테스트",
+      "89개 통과"
+    ],
+    [
+      "실제 provider 공격",
+      "미실행"
+    ],
+    [
+      "실데이터·공격 다양성·효용",
+      "추가 평가 필요"
+    ]
+  ],
+  "next": [
+    "같은 질의 예산의 공격자 비교와 정상 질의 효용 측정",
+    "실제 모델을 사용하는 적응형 공격의 통제된 실행",
+    "정책 우회와 누적 정보 노출에 대한 추가 평가"
+  ],
+  "security": "Ledger 규칙은 완전한 보안 증명이나 differential privacy 보장이 아니다. 평문 fallback을 암호화 검증으로 표시하지 않으며 provider 실행 여부를 따로 기록한다.",
+  "title": "GenomeFirewall | Evidence snapshot",
+  "schema_version": "1",
+  "created_on": "2026-09-29"
+}
